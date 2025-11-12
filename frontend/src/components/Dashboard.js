@@ -109,6 +109,7 @@ const Dashboard = () => {
     );
   }
 
+<<<<<<< HEAD
   const tabItems = [
     {
       key: 'overview',
@@ -121,6 +122,20 @@ const Dashboard = () => {
       children: (
         <>
           <Row gutter={[24, 24]} className="dashboard-grid">
+=======
+  return (
+    <div>
+      <div className="page-header">
+        <Title level={2} className="page-title">
+          Tổng quan hệ thống
+        </Title>
+        <p className="page-description">
+          Thống kê và theo dõi tài sản IT trong công ty
+        </p>
+      </div>
+
+      <Row gutter={[24, 24]} className="dashboard-grid">
+>>>>>>> 25fd682eb4de00ff14b35f6b12fad031d6952c0c
         <Col xs={24} sm={12} lg={6} style={{ maxWidth: '100%' }}>
           <Card className="stats-card">
             <Statistic
