@@ -67,3 +67,15 @@ docker-compose down -v
 docker-compose up -d --build
 ```
 
+### Nếu gặp lỗi "Permission denied" với PostgreSQL:
+```bash
+# Xóa volume cũ và tạo lại
+docker-compose down -v
+sudo rm -rf postgres_data
+docker-compose up -d
+```
+
+### Nếu gặp cảnh báo về 'version' attribute:
+- Cảnh báo này không ảnh hưởng đến hoạt động, có thể bỏ qua
+- Hoặc cập nhật docker-compose.yml (đã được sửa trong code mới nhất)
+
