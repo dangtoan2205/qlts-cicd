@@ -1,4 +1,4 @@
-name: Build and Push Docker Images
+name: Build and Push Single Docker Image
 
 on:
   push:
@@ -18,20 +18,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Backend
-      - name: Build backend image
+      - name: Build combined image (frontend + backend)
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/qlts-backend:latest ./backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/qlts-cicd:latest .
 
-      - name: Push backend image
+      - name: Push combined image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/qlts-backend:latest
-
-      # Frontend
-      - name: Build frontend image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/qlts-frontend:latest ./frontend
-
-      - name: Push frontend image
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/qlts-frontend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/qlts-cicd:latest
