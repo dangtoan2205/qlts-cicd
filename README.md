@@ -7,6 +7,44 @@ Hệ thống quản lý tài sản IT với React frontend và Node.js backend.
 - Docker >= 20.10
 - Docker Compose >= 2.0
 
+### Cài Docker (gói docker.io của Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl enable --now docker
+```
+
+Kiểm tra service:
+
+```bash
+systemctl status docker --no-pager
+docker --version
+```
+
+Cho user hiện tại chạy docker không cần sudo
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+Áp dụng ngay trong phiên shell hiện tại (không cần logout):
+
+```bash
+newgrp docker
+```
+
+### Cài Docker Compose plugin (v2)
+
+```bash
+sudo add-apt-repository -y universe
+sudo apt update
+```
+
+```bash
+sudo apt install -y docker-compose-v2
+```
+
 ## Cài đặt và chạy dự án
 
 ### 1. Clone repository
